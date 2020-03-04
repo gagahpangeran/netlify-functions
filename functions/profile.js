@@ -11,7 +11,6 @@ exports.handler = async event => {
     return Math.floor(Math.random() * (max - min + 1)) + min;
   };
 
-  const point = Math.floor(getRandomInt(0, 10000) / 1000) * 1000;
   const referral = getRandomInt(5, 20);
   const interview = getRandomInt(3, referral);
   const placement = getRandomInt(0, interview);
@@ -19,7 +18,7 @@ exports.handler = async event => {
   const data =
     username === "" || username === undefined
       ? {}
-      : { username, point, referral, interview, placement };
+      : { username, referral, interview, placement };
 
   return {
     statusCode: 200,
