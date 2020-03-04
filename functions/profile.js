@@ -1,5 +1,9 @@
 exports.handler = async event => {
+  const seed = require("seed-random");
+
   const username = event.path.split("/")[4];
+
+  seed(username, { global: true });
 
   const getRandomInt = (min, max) => {
     min = Math.ceil(min);
