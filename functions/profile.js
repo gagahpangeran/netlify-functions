@@ -1,6 +1,6 @@
-exports.handler = async event => {
-  const seed = require("seed-random");
+const seed = require("seed-random");
 
+exports.handler = async event => {
   const username = event.path.split("/")[4];
 
   seed(username, { global: true });
